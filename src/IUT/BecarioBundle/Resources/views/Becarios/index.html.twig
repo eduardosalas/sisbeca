@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Becarios list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cedula</th>
+                <th>Username</th>
+                <th>Nombre1</th>
+                <th>Nombre2</th>
+                <th>Ape1</th>
+                <th>Ape2</th>
+                <th>Codcarrera</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('becarios_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.cedula }}</td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.nombre1 }}</td>
+                <td>{{ entity.nombre2 }}</td>
+                <td>{{ entity.ape1 }}</td>
+                <td>{{ entity.ape2 }}</td>
+                <td>{{ entity.codCarrera }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('becarios_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('becarios_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('becarios_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

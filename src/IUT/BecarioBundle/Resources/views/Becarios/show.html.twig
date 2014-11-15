@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Becarios</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Cedula</th>
+                <td>{{ entity.cedula }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+            <tr>
+                <th>Nombre1</th>
+                <td>{{ entity.nombre1 }}</td>
+            </tr>
+            <tr>
+                <th>Nombre2</th>
+                <td>{{ entity.nombre2 }}</td>
+            </tr>
+            <tr>
+                <th>Ape1</th>
+                <td>{{ entity.ape1 }}</td>
+            </tr>
+            <tr>
+                <th>Ape2</th>
+                <td>{{ entity.ape2 }}</td>
+            </tr>
+            <tr>
+                <th>Codcarrera</th>
+                <td>{{ entity.codCarrera }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('becarios') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('becarios_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
