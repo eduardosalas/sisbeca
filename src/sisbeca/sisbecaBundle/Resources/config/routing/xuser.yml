@@ -1,0 +1,30 @@
+xuser:
+    pattern:  /
+    defaults: { _controller: "sisbecaBundle:XUser:index" }
+
+xuser_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "sisbecaBundle:XUser:show" }
+
+xuser_new:
+    pattern:  /new
+    defaults: { _controller: "sisbecaBundle:XUser:new" }
+
+xuser_create:
+    pattern:  /{ci}/create
+    defaults: { _controller: "sisbecaBundle:XUser:create" }
+    requirements: { _method: post }
+
+xuser_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "sisbecaBundle:XUser:edit" }
+
+xuser_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "sisbecaBundle:XUser:update" }
+    requirements: { _method: post }
+
+xuser_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "sisbecaBundle:XUser:delete" }
+    requirements: { _method: post }

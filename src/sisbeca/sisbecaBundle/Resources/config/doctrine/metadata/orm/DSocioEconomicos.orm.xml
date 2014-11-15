@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DSocioEconomicos" table="d_socio_economicos">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nomapeResponsable" type="string" column="nomape_responsable" length="250"/>
+    <field name="ciResponsable" type="integer" column="ci_responsable"/>
+    <field name="telResponable" type="string" column="tel_responable" length="15"/>
+    <many-to-one field="idGrupoFami" target-entity="GrupoFamiliar" orphan-removal="">
+      <join-columns>
+        <join-column name="id_grupo_fami" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="parentesco" target-entity="ViveCon" orphan-removal="">
+      <join-columns>
+        <join-column name="parentesco" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="rangoIngreso" target-entity="RangoIngreso" orphan-removal="">
+      <join-columns>
+        <join-column name="rango_ingreso" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idTenenciaVivienda" target-entity="TVivienda" orphan-removal="">
+      <join-columns>
+        <join-column name="id_tenencia_vivienda" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="viveCon" target-entity="ViveCon" orphan-removal="">
+      <join-columns>
+        <join-column name="vive_con" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cedula" target-entity="DPersonales" orphan-removal="">
+      <join-columns>
+        <join-column name="cedula" referenced-column-name="cedula"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

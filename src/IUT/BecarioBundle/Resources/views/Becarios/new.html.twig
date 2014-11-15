@@ -1,15 +1,16 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Becarios creation</h1>
-
+    <h1>Crear Becarios</h1>
+    
+    <div class="row">
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('becarios') }}">
-            Back to the list
+    </div>
+    
+    <div class="row">
+        
+        <a class="btn btn-info col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5" role="button"  href="{{ path('becarios') }}">
+            Volver a la lista
         </a>
-    </li>
-</ul>
+    </div>
 {% endblock %}

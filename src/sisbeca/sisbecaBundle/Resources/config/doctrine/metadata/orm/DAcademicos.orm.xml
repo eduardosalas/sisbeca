@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DAcademicos" table="d_academicos">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="annoIngreso" type="date" column="anno_ingreso"/>
+    <many-to-one field="fIngreso" target-entity="FormaIngreso" orphan-removal="">
+      <join-columns>
+        <join-column name="f_ingreso" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idAnnoCurso" target-entity="AnnoCurso" orphan-removal="">
+      <join-columns>
+        <join-column name="id_anno_curso" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idTurno" target-entity="Turno" orphan-removal="">
+      <join-columns>
+        <join-column name="id_turno" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cedula" target-entity="DPersonales" orphan-removal="">
+      <join-columns>
+        <join-column name="cedula" referenced-column-name="cedula"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="codCarrera" target-entity="Carreras" orphan-removal="">
+      <join-columns>
+        <join-column name="cod_carrera" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

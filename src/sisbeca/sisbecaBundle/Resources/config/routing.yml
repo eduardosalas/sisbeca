@@ -1,0 +1,33 @@
+sisbecaBundle_xuser:
+    resource: "@sisbecaBundle/Resources/config/routing/xuser.yml"
+    prefix:   /xuser
+
+sisbecaBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: sisbecaBundle:Default:index }
+    
+sisbecaBundle_login:
+    pattern:     /login
+    defaults: { _controller: sisbecaBundle:Seguridad:login }
+    
+sisbecaBundle_welcome:
+    pattern:     /welcome
+    defaults: { _controller: sisbecaBundle:Seguridad:welcome }
+
+sisbecaBundle_aboutus:
+    pattern:     /about
+    defaults: { _controller: sisbecaBundle:Principal:about }
+    
+sisbecaBundle_readmore:
+    pattern:     /readmore
+    defaults: { _controller: sisbecaBundle:Principal:readmore }
+    
+sisbecaBundle_validate:
+    pattern:     /validatestudent
+    defaults: { _controller: sisbecaBundle:Seguridad:validateStudent }
+
+check_path:
+    pattern: /login_check
+
+logout:
+    pattern:  /logout

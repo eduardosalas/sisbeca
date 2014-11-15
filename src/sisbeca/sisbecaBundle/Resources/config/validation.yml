@@ -1,0 +1,9 @@
+sisbeca\sisbecaBundle\Entity\XUser:
+    properties:
+        email:
+         - NotBlank: { message: "Dirección de Correo" }
+         - Email:    { message: "Correo Inválido" }
+        login:
+         - NotBlank: { message: "Usuario" }
+        password:
+         - NotBlank: { message: "Contraseña" }

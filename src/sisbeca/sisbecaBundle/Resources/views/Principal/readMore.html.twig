@@ -1,0 +1,44 @@
+{% extends "::base.html.twig"%}
+{% block contenido %}
+    <div class="col-lg-12">
+        <div class="page-header"><h2>Tipos de Becas</h2></div><br><br>
+    </div>
+
+    <div class="container">
+
+        <div class="col-lg-12">
+
+            <div class="col-sm-4">
+                <img class="img-rounded" src="{{ asset('images/estudiante.png')}}" />
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Beca Estudio</h3>
+                    </div>
+
+                    <p align="justify">Es un beneficio que se asigna a las y los estudiantes de bajos recursos económicos,
+                        debiéndose cumplir con un desempeño académico satisfactorio que implica además su participación 
+                        activa y protagónica en las diversas actividades organizadas por el ente rector MPPEU y la Institución.
+                        La o él estudiante tendrá derecho al beneficio sólo por el tiempo de duración del Programa Nacional
+                        de Formación, debiendo atender a los requerimientos exigidos por del Departamento de Desarrollo y
+                        Bienestar Estudiantil.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Beca Ayudantía</h3>
+                    </div>
+
+                    <p align="justify">Es una ayuda económica, previo desarrollo de actividades asociadas a su área de estudio, cultural o de deporte.
+                        Su objetivo es contribuir con la formación integral de las y los estudiantes, promoviendo valores de disciplina,
+                        responsabilidad, cooperación y solidaridad.</p><br><br><br><br><br>
+
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+{% endblock %}

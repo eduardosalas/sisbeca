@@ -1,53 +1,58 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Becarios list</h1>
+    <div class="row">
+        <h1>Becarios list</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Cedula</th>
+                        <th>Nombre de Usuario</th>
+                        <th>Nombre 1</th>
+                        <th>Nombre 2</th>
+                        <th>Apellido 1</th>
+                        <th>Apellido 2</th>
+                        <th>Codigo Carrera</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('becarios_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>{{ entity.cedula }}</td>
+                            <td>{{ entity.username }}</td>
+                            <td>{{ entity.nombre1 }}</td>
+                            <td>{{ entity.nombre2 }}</td>
+                            <td>{{ entity.ape1 }}</td>
+                            <td>{{ entity.ape2 }}</td>
+                            <td>{{ entity.codCarrera }}</td>
+                            <td>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Cedula</th>
-                <th>Username</th>
-                <th>Nombre1</th>
-                <th>Nombre2</th>
-                <th>Ape1</th>
-                <th>Ape2</th>
-                <th>Codcarrera</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('becarios_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.cedula }}</td>
-                <td>{{ entity.username }}</td>
-                <td>{{ entity.nombre1 }}</td>
-                <td>{{ entity.nombre2 }}</td>
-                <td>{{ entity.ape1 }}</td>
-                <td>{{ entity.ape2 }}</td>
-                <td>{{ entity.codCarrera }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('becarios_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('becarios_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                                <a class="btn btn-default btn-sm btn-block" role="button" href="{{ path('becarios_show', { 'id': entity.id }) }}">Mostrar</a>
 
-        <ul>
-        <li>
-            <a href="{{ path('becarios_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+
+                                <a class="btn btn-default btn-sm btn-block" role="button" href="{{ path('becarios_edit', { 'id': entity.id }) }}">Edit</a>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+    <div class="row">
+
+
+        <a class="btn btn-info col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5" role="button" href="{{ path('becarios_new') }}">
+            Crear nuevo becario
+        </a>
+
+
+    </div>
+{% endblock %}

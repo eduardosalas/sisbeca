@@ -1,0 +1,126 @@
+{% extends "::base.html.twig" %}
+{% block contenido %}
+    <div class="col-lg-12">
+        <div class="row center-block">
+            <div class="col-sm-8">
+                <div class="jumbotron fondo_banner">
+                    <div class="colorT">Sistema de Gestión de Becarios</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Autenticación</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        {% if error %}
+
+                            <div class=" row">
+                                <div class="col-xs-12">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <div class="alert alert-danger"> 
+                                        <div class="text-center">{{ error.message|trans }}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endif %}
+
+                        <form role="form" action="{{ path("check_path") }}" method="post" id="login">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="_username" value="{{ last_username }}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" class="form-control" id="password" placeholder="Contraseña" name="_password" />
+                                </div>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-info center-block">Ingresar</button>
+                            <br>
+                        </form>
+
+                    </div>
+                </div>
+            </div></div><br>
+
+        <div class="row center-block">
+
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Programa de Asignación Económica</h3>
+                    </div>
+                    <p align="justify">Es un beneficio que permite atender a las y los estudiantes 
+                        que cursan estudios en los diferentes Programas Nacionales de 
+                        Formación y/o Carreras. </p> <br><br>
+                    <a href="{{ path('sisbecaBundle_readmore') }}" class="glyphicon glyphicon-chevron-right">Leer más>></a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Requisitos</h3>
+
+                    </div>
+                    <p align="justify">
+                        * Tener aprobado el Trayecto Inicial.<br>
+                        * Confrontar situación de bajos recursos <br> socio económicos. <br>
+                        * Tener todas las materias aprobadas al momento de la solicitud.<br>
+                    </p>
+                    <a href="#myModal" role="button" data-toggle="modal" class="glyphicon glyphicon-chevron-right">Leer más</a>
+
+                    <!-- Modal HTML -->
+
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Requisitos para la solicitud de Becas</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>Tener aprobado el Trayecto Inicial.</li>
+                                        <li>Confrontar situación de bajos recursos socio económicos.</li>
+                                        <li>Tener todas las materias aprobadas al momento de la solicitud.</li>
+                                        <li>Si viene por cambio de carrera, haber aprobado el año completo de la carrera que procede.</li>
+                                        <li>No tener ningún tipo de asignación económica permanente de otra institución.</li>
+                                        <li>Consignar los documentos actualizados sin ningún tipo de tachadura.</li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Crear Usuario</h3>
+                    </div>
+
+                    <div style="width: 100%; margin-top: 40px; text-align: center;">
+
+                        <a href="{{ path('sisbecaBundle_validate') }}" class="glyphicon glyphicon-user" style="font-size: 30px;">Registrar</a>
+
+                    </div><br><br><br>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

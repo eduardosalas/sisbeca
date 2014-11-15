@@ -1,0 +1,7 @@
+parameters:
+#    sisbeca.example.class: sisbeca\sisbecaBundle\Example
+
+services:
+#    sisbeca.example:
+#        class: %sisbeca.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

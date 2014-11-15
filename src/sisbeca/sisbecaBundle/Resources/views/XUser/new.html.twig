@@ -1,0 +1,126 @@
+{% extends '::base.html.twig' %}
+
+{% block contenido %}
+
+    <div class="col-lg-1"></div>
+    <div class="col-lg-9">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" align="center">Crear Usuario</h3>
+            </div>
+
+            <div class="panel-body">
+                <form novalidate="novalidate" action="{{ path('xuser_create', { 'ci': entityA.cedula }) }}" class="form-horizontal" method="post" {{ form_enctype(form) }} >
+
+                    <div class="row">
+                        <div class="col-md-3">  
+                            <div class="form-group">
+                                <div class="col-xs-9">
+                                    <p>
+                                        {{ form_label(form.archivador, 'Nº de Expediente') }}
+                                        {{ form_widget(form.archivador, { 'attr': { 'class': 'form-control', 'style': 'width:170px', 'value': entityA.archivador, 'readonly': 'true' } }) }}
+                                        {{ form_errors(form.archivador) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">  
+                            <div class="form-group">
+                                <div class="col-xs-8">
+                                    <p>
+                                        {{ form_label(form.ci, 'Cédula') }}
+                                        {{ form_widget(form.ci, { 'attr': { 'class': 'form-control', 'style': 'width:170px', 'value': entityA.cedula, 'readonly': 'true' } }) }}
+                                        {{ form_errors(form.ci) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">  
+                            <div class="form-group">
+                                <div class="col-xs-8">
+                                    <p>
+                                        {{ form_label(form.name, 'Nombre y Apellido') }}
+                                        {{ form_widget(form.name, { 'attr': { 'class': 'form-control', 'style': 'width:300px', 'value': [entityA.nombres, entityA.apellidos]|join(' '), 'readonly': 'true' } }) }}
+                                        {{ form_errors(form.name) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <div class="form-group">
+                                <div class="col-xs-9">
+                                    <p>
+                                        {{ form_label(form.email, 'Correo') }}
+                                        {{ form_widget(form.email, { 'attr': { 'class': 'form-control', 'style': 'width:400px', 'required': 'true'} }) }}
+                                        {% if form_errors(form.email) %} 
+                                            {{ form_errors(form.email) }}
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <div class="form-group">
+                                <div class="col-xs-10">
+                                    {{ form_label(form.login, 'Usuario') }}
+                                    {{ form_widget(form.login, { 'attr': { 'class': 'form-control', 'style': 'width:240px', 'required': 'true'} }) }}
+                                    {% if form_errors(form.password) %} 
+                                        {{ form_errors(form.login) }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">  
+                            <div class="form-group">
+                                <div class="col-xs-10">
+                                    {{ form_label(form.password.Escriba_su_clave, 'Contraseña') }}
+                                    {{ form_widget(form.password.Escriba_su_clave, { 'attr': { 'class': 'form-control', 'style': 'width:240px', 'required': 'true'} }) }}
+                                    {% if form_errors(form.password) %}            
+                                        <div class="error"> {{ form_errors(form.password) }}</div>            
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">  
+                            <div class="form-group">
+                                <div class="col-xs-10">
+                                    {{ form_label(form.password.Repita_su_clave, 'Repetir Contraseña') }}
+                                    {{ form_widget(form.password.Repita_su_clave, { 'attr': { 'class': 'form-control', 'style': 'width:240px', 'required': 'true'} }) }}
+                                    {% if form_errors(form.password) %}            
+                                        <div class="error"> {{ form_errors(form.password) }}</div>             
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div><br>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-5">  
+                            <div class="form-group">
+                                <div class="col-xs-10">                              
+                                    {{ form_widget(form.captcha, { 'attr': { 'class': 'form-control'} }) }}
+                                    {% if form_errors(form.password) %} 
+                                        {{ form_errors(form.captcha) }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+
+                    <button type="submit" class="btn btn-info center-block" >Registrar</button>
+
+                    {{ form_rest(form) }}
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

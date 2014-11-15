@@ -1,0 +1,80 @@
+{# Menu usuario autenticado #}
+<div class="col-lg-12">
+    <ul class="breadcrumb2">
+
+        <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+                Beca Estudio <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" >Registrar Nueva Solicitud</a></li>
+                <li><a href="#" >Consultar Becarios</a></li>
+                <li><a href="#" >Consultar Solicitudes</a></li>
+                <li><a href="#" >Estatus de Becarios</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+                Beca Ayudantía <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" >Registrar Nueva Solicitud</a></li>
+                <li><a href="#" >Consultar Becarios</a></li>
+                <li><a href="#" >Consultar Solicitudes</a></li>
+                <li><a href="#" >Estatus de Becarios</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+                Reportes Estadísticos <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" class="glyphicon glyphicon-stats">Gráficos</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+                Gestión Bancaria <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" class="glyphicon glyphicon-user">Usuarios</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+                Administración <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" class="glyphicon glyphicon-user">Usuarios</a></li>
+            </ul>
+        </div>
+
+        <li><a href="#" class="glyphicon glyphicon-question-sign">Ayuda</a></li>
+
+        <div class="btn-group pull-right">
+            <button class="btn btn-default btn-xs dropdown-toggle"
+                    type="button" data-toggle="dropdown">
+
+                {% if app.user %}
+                    Bienvenido: {{ app.user.username }} 
+                {% endif %}
+
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" class="glyphicon glyphicon-pencil">Cambiar contraseña</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('logout') }}" class="glyphicon glyphicon-off">Salir</a></li>
+            </ul>
+        </div>
+    </ul>
+</div>

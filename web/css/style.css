@@ -1,0 +1,44 @@
+.cbo
+{
+    background-color:#FFFFFF;
+    border-width:thin;
+    border-style:solid;
+    border-color:#CCCCCC;
+    font:bold 10pt Arial, Helvetica, sans-serif;
+}
+
+.texto_register{
+    font: 9pt Arial, Helvetica, sans-serif;
+
+}
+
+.fondo_banner {
+    display: inline-block;
+    max-width: 90%;
+    height: 250px;
+
+    line-height: 1.428571429;
+
+
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background: url("../images/banner_iut.png") no-repeat;
+} 
+
+.colorT{
+    color:#ffffff;
+    font-size: 35px;
+    font-style: inherit;
+    font-weight: bold;        
+}
+
+.espacioF {
+    border-bottom: 3px solid red;
+}
+
+.labelOutputText{
+    font-size: 14px;
+    color: #15428b;
+    font-family: calibri, arial, helvetica, sans-serif;
+}
